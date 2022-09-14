@@ -24,7 +24,11 @@
                 "tsx": "never"
             }
         ],
-        "eol-last": 1
+        "linebreak-style": "off",
+        "class-methods-use-this": "off",
+        "no-console": "off",
+        "eol-last": 1,
+        "import/prefer-default-export": "off"
     },
     "settings": {
         "import/resolver": {

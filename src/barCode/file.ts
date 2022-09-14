@@ -21,7 +21,7 @@ class BarCodeFileGenerator extends BarCodeModel.default {
   ): Promise<void> {
     let resolvedPath = '';
 
-    await new Promise((resolve, reject) => {
+    await new Promise<void>((resolve, reject) => {
       bwipjs.toBuffer(barcodeGen, (err, png) => {
         if (err) {
           if (typeof err === 'string') {

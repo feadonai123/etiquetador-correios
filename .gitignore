@@ -114,3 +114,5 @@ dist
 .history/
 
 build/*
+
+package-lock.json

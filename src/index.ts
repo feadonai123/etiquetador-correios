@@ -1,14 +1,14 @@
 /* eslint-disable no-console */
 import DrawTest from './label/correiosPackage/drawTest';
-import {BrazilState, sender, recipient} from './label/pageTypes'
+import { sender, recipient } from './label/pageTypes';
 
-export default async (
-      RemetenteObj: sender,
-      DestinatarioObj: recipient,
-  ) => {
+export const gerarBase64 = (
+  RemetenteObj: sender,
+  DestinatarioObj: recipient,
+) : string => {
   // Cria um PDF
   const pdfCreateFileWithStream = new DrawTest();
   // Roda o teste de desenhar a label
-  pdfCreateFileWithStream.test(RemetenteObj, DestinatarioObj);
-  console.log('generated /tmp/lol.pdf, open it!');
+  const base64 = pdfCreateFileWithStream.genBase64(RemetenteObj, DestinatarioObj);
+  return base64;
 };

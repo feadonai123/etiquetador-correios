@@ -1,6 +1,5 @@
-import { writeFileSync } from 'fs';
 import DrawLabel from './drawStream';
-import {sender, recipient} from '../pageTypes'
+import { sender, recipient } from '../pageTypes';
 
 // Cria um arquivo PDF para testes manuais e gera o arquivo
 // /tmp/lol.pdf para prototipar
@@ -25,7 +24,7 @@ class DrawTest extends DrawLabel {
         Recipient.address.Bairro,
         Recipient.address.CEP,
         Recipient.address.Cidade,
-        Recipient.address.Estado
+        Recipient.address.Estado,
       );
       this.drawSenderText(
         Sender.address.NomeLinha1,
@@ -36,12 +35,12 @@ class DrawTest extends DrawLabel {
         Sender.address.Bairro,
         Sender.address.CEP,
         Sender.address.Cidade,
-        Sender.address.Estado
+        Sender.address.Estado,
       );
     }
   }
 
-  public test(
+  public genBase64(
     sender1?: sender,
     recipient1?: recipient,
     sender2?: sender,
@@ -50,18 +49,18 @@ class DrawTest extends DrawLabel {
     recipient3?: recipient,
     sender4?: sender,
     recipient4?: recipient,
-  ) {
+  ) : string {
     if (
-      !(sender1 && recipient1) &&
-      !(sender2 && recipient2) &&
-      !(sender3 && recipient3) &&
-      !(sender4 && recipient4)
+      !(sender1 && recipient1)
+      && !(sender2 && recipient2)
+      && !(sender3 && recipient3)
+      && !(sender4 && recipient4)
     ) {
-        throw new Error('Preciso de pelo menos um par consecutivo de destinatario e remetente!');
-      }
+      throw new Error('Preciso de pelo menos um par consecutivo de destinatario e remetente!');
+    }
     // Entry point to output PDF
 
-    this.drawLabel(sender1, recipient1)
+    this.drawLabel(sender1, recipient1);
 
     this.drawLabel(sender2, recipient2);
 
@@ -70,7 +69,7 @@ class DrawTest extends DrawLabel {
     this.drawLabel(sender4, recipient4);
 
     this.doc.end();
-    writeFileSync('/tmp/lol.pdf', this.doc.read());
+    return this.doc.read().toString('base64');
   }
 }
 
