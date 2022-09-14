@@ -30,7 +30,8 @@
 
 # Exemplo de uso
 
-`import fs from 'fs';
+```
+import fs from 'fs';
 import { gerarBase64 } from '.';
 
 const remetente = {
@@ -62,4 +63,5 @@ const destinatario = {
 };
 
 const base64 : string = gerarBase64(remetente, destinatario);
-fs.writeFileSync('rotulo.pdf', base64, 'base64');`
+fs.writeFileSync('rotulo.pdf', base64, 'base64');
+```

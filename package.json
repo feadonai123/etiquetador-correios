@@ -1,6 +1,6 @@
 {
   "name": "etiquetador-correios",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Gerador de etiquetas para encomendas do correios",
   "main": "build/index.js",
   "types" : "build/index.d.ts",
