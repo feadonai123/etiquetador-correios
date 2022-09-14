@@ -26,22 +26,40 @@
 ![Another screenshot](https://beeimg.com/images/r63492071253.png)
 
 ## Como rodar?
-### Para instalar, desenvolver, rodar, etc...
+`npm install etiquetador-correios`
 
+# Exemplo de uso
 
-`yarn serve # Servir pagina de desenvolvimento`
+`import fs from 'fs';
+import { gerarBase64 } from '.';
 
-`yarn install # Para instalar as dependencias`
+const remetente = {
+  address: {
+    NomeLinha1: 'NomeLinha1',
+    NomeLinha2: 'NomeLinha2',
+    RuaComPrefixo: 'RuaComPrefixo',
+    NumeroDaRua: 123,
+    Complemento: 'Complemento',
+    Bairro: 'Bairro',
+    CEP: 'CEP',
+    Cidade: 'Cidade',
+    Estado: 'SP',
+  },
+};
 
-`yarn tsc && node build/index.js # Rodar build`
+const destinatario = {
+  address: {
+    NomeLinha1: 'NomeLinha1',
+    NomeLinha2: 'NomeLinha2',
+    RuaComPrefixo: 'RuaComPrefixo',
+    NumeroDaRua: 123,
+    Complemento: 'Complemento',
+    Bairro: 'Bairro',
+    CEP: 'CEP',
+    Cidade: 'Cidade',
+    Estado: 'SP',
+  },
+};
 
-## Para desenvolver (Brinde aos devs)
-> ### TESTES Manuais:
-> Toda vez que eu altero o DrawStream ou uma parte crucial do programa eu testo a etiqueta
-`firefox /tmp/lol.pdf # PDF Gerado`
-`xdg-open /tmp/lol.pdf`
-`chromium /tmp/lol.pdf`
-`chrome /tmp/lol.pdf`
-
-> ### Como testar BarCode
-> TODO: Documentar pendencias, mas ele gera um tempfile com nome unico
+const base64 : string = gerarBase64(remetente, destinatario);
+fs.writeFileSync('rotulo.pdf', base64, 'base64');`
