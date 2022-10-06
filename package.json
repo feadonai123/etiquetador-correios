@@ -15,8 +15,8 @@
     "clean": "rm -r build",
     "build": "tsc --declaration",
     "start": "node build/index.js",
-    "serve": "ts-node-dev src/index.ts",
-    "test": "ts-node-dev src/sample.ts"
+    "serve": "ts-node-dev index.ts",
+    "test": "ts-node-dev sample.ts"
   },
   "devDependencies": {
     "@types/bwip-js": "^2.0.0",

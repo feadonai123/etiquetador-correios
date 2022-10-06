@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { gerarBase64 } from '.';
+import { gerarBase64 } from './src';
 
 const remetente = {
   address: {
