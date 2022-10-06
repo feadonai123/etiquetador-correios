@@ -1,13 +1,15 @@
 {
-  "name": "etiquetador-correios",
+  "name": "@botpag/etiquetador-correios",
   "version": "0.0.4",
   "description": "Gerador de etiquetas para encomendas do correios",
   "main": "build/index.js",
-  "types" : "build/index.d.ts",
-  "repository": "https://github.com/phruzic/etiquetador-correios",
+  "types": "build/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feadonai123/etiquetador-correios.git"
+  },
   "author": "phruzic",
   "license": "GPL-3.0-or-later",
-  "private": false,
   "scripts": {
     "lint": "yarn eslint --fix \"./src/**.ts\" -c .eslintrc.json",
     "clean": "rm -r build",
@@ -34,5 +36,9 @@
     "bwip-js": "^2.0.11",
     "pdfkit": "^0.11.0",
     "temp": "^0.9.4"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/feadonai123/etiquetador-correios/issues"
+  },
+  "homepage": "https://github.com/feadonai123/etiquetador-correios#readme"
 }
